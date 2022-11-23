@@ -18,18 +18,13 @@
 
     <div style="width:500px ; margin:0 auto">
 
-        <form action="./store.php" method="post">
-            <input name="id" type="text" placeholder="give your id">
-            <input name="name" type="text" placeholder="give your name">
-            <button>Submit</button>
-        </form>
-
         <?php
         if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
             unset($_SESSION['message']);
         }
         ?>
+        <a href="./create.php">Create</a>
         <table border="1" style="width: 100%;">
             <thead>
                 <tr>
@@ -48,6 +43,7 @@
                         <td> <?= $student['name'] ?></td>
                         <td>
                             <a href="delete.php?id=<?= $student['id'] ?> ">Delete</a>
+                            <a href="show.php?id=<?= $student['id'] ?> ">Show</a>
                         </td>
                     </tr>
                 <?php
